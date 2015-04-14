@@ -50,17 +50,17 @@ namespace ITfoxtec.Saml2.Tokens
             }
 
             var identity = this.CreateClaims(saml2SecurityToken);
-            if (saml2SecurityToken.Assertion.Subject.NameId == null)
-            {
-                throw new InvalidDataException("The requered NameID Assertion is null");
-            }
-            identity.AddClaim(new Claim(Saml2ClaimTypes.NameId, saml2SecurityToken.Assertion.Subject.NameId.Value));
-            if (saml2SecurityToken.Assertion.Subject.NameId.Format == null)
-            {
-                throw new InvalidDataException("The requered NameID Assertion Format is null");
-            }
-            identity.AddClaim(new Claim(Saml2ClaimTypes.NameIdFormat, saml2SecurityToken.Assertion.Subject.NameId.Format.AbsoluteUri));
-            identity.AddClaim(new Claim(Saml2ClaimTypes.SessionIndex, saml2SecurityToken.Id));
+            //if (saml2SecurityToken.Assertion.Subject.NameId == null)
+            //{
+            //    throw new InvalidDataException("The requered NameID Assertion is null");
+            //}
+            //identity.AddClaim(new Claim(Saml2ClaimTypes.NameId, saml2SecurityToken.Assertion.Subject.NameId.Value));
+            //if (saml2SecurityToken.Assertion.Subject.NameId.Format == null)
+            //{
+            //    throw new InvalidDataException("The requered NameID Assertion Format is null");
+            //}
+            //identity.AddClaim(new Claim(Saml2ClaimTypes.NameIdFormat, saml2SecurityToken.Assertion.Subject.NameId.Format.AbsoluteUri));
+            //identity.AddClaim(new Claim(Saml2ClaimTypes.SessionIndex, saml2SecurityToken.Id));
 
             if (Configuration.SaveBootstrapContext)
             {
