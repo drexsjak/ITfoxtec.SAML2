@@ -52,7 +52,7 @@ namespace ITfoxtec.Saml2
             var identity = ClaimsPrincipal.Current.Identities.First();
             if (identity.IsAuthenticated)
             {
-                NameId = new Saml2NameIdentifier(ReadClaimValue(identity, Saml2ClaimTypes.NameId), new Uri(ReadClaimValue(identity, Saml2ClaimTypes.NameIdFormat)));
+                NameId = new Saml2NameIdentifier(ReadClaimValue(identity, Saml2ClaimTypes.NameId));
                 SessionIndex = ReadClaimValue(identity, Saml2ClaimTypes.SessionIndex);
             }           
         }
